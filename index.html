@@ -1,264 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Singhania Technology Private Limited</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singhania Technology Private Limited</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body{
-      background:#f5f5f5;
-      color:#222;
-    }
+<style>
 
-    header{
-      background:#c40000;
-      color:white;
-      padding:20px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
-    .logo{
-      font-size:28px;
-      font-weight:bold;
-    }
+body{
+background:#0f0f0f;
+color:white;
+overflow-x:hidden;
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      margin-left:20px;
-      font-weight:bold;
-    }
+/* HEADER */
 
-    .hero{
-      height:90vh;
-      background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:white;
-      padding:20px;
-    }
+header{
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(10px);
+}
 
-    .hero-content h1{
-      font-size:50px;
-      margin-bottom:20px;
-    }
+.logo{
+font-size:28px;
+font-weight:700;
+color:#ff1a1a;
+}
 
-    .hero-content p{
-      font-size:20px;
-      margin-bottom:30px;
-    }
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-size:16px;
+transition:0.3s;
+}
 
-    .btn{
-      background:#ff0000;
-      color:white;
-      padding:14px 28px;
-      text-decoration:none;
-      border-radius:5px;
-      font-weight:bold;
-    }
+nav a:hover{
+color:#ff1a1a;
+}
 
-    section{
-      padding:60px 40px;
-    }
+/* HERO */
 
-    .section-title{
-      text-align:center;
-      font-size:36px;
-      color:#c40000;
-      margin-bottom:40px;
-    }
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+background:
+linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+background-size:cover;
+background-position:center;
+}
 
-    .about p,
-    .services p{
-      max-width:900px;
-      margin:auto;
-      text-align:center;
-      line-height:1.8;
-      font-size:18px;
-    }
+.hero-content h1{
+font-size:65px;
+line-height:1.2;
+margin-bottom:20px;
+animation:fadeUp 1s ease;
+}
 
-    .service-boxes{
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin-top:40px;
-    }
+.hero-content span{
+color:#ff1a1a;
+}
 
-    .box{
-      background:white;
-      width:280px;
-      padding:25px;
-      border-radius:10px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      text-align:center;
-    }
+.hero-content p{
+font-size:20px;
+color:#ddd;
+margin-bottom:40px;
+animation:fadeUp 1.3s ease;
+}
 
-    .box h3{
-      color:#c40000;
-      margin-bottom:15px;
-    }
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
 
-    .contact{
-      background:#111;
-      color:white;
-      text-align:center;
-    }
+.btn{
+padding:15px 35px;
+background:#ff1a1a;
+color:white;
+text-decoration:none;
+border-radius:40px;
+font-weight:600;
+transition:0.3s;
+}
 
-    .contact p{
-      margin:10px 0;
-      font-size:18px;
-    }
+.btn:hover{
+transform:translateY(-5px);
+background:white;
+color:#111;
+}
 
-    footer{
-      background:#c40000;
-      color:white;
-      text-align:center;
-      padding:15px;
-    }
+.btn-outline{
+background:transparent;
+border:2px solid #ff1a1a;
+}
 
-    @media(max-width:768px){
-      .hero-content h1{
-        font-size:34px;
-      }
+/* ABOUT */
 
-      nav{
-        display:none;
-      }
-    }
-  </style>
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:60px;
+color:#ff1a1a;
+}
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+}
+
+.about-text h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.about-text p{
+line-height:1.8;
+color:#ccc;
+}
+
+/* SERVICES */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#181818;
+padding:35px;
+border-radius:20px;
+transition:0.4s;
+border:1px solid #222;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff1a1a;
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:24px;
+color:#ff1a1a;
+}
+
+.card p{
+color:#bbb;
+line-height:1.6;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+background:#141414;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.testimonial{
+background:#1d1d1d;
+padding:30px;
+border-radius:20px;
+border:1px solid #222;
+}
+
+.testimonial h4{
+color:#ff1a1a;
+margin-bottom:15px;
+font-size:22px;
+}
+
+.testimonial p{
+color:#ccc;
+line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact-box{
+text-align:center;
+background:#181818;
+padding:60px;
+border-radius:20px;
+}
+
+.contact-box h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.contact-box p{
+margin-bottom:30px;
+color:#ccc;
+}
+
+/* FOOTER */
+
+footer{
+padding:30px;
+text-align:center;
+background:#090909;
+color:#777;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:42px;
+}
+
+nav{
+display:none;
+}
+
+.section-title{
+font-size:35px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">Singhania Technology Pvt. Ltd.</div>
+<header>
+<div class="logo">Singhania Technology</div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Professional Typing & Assignment Services</h1>
+<!-- HERO -->
 
-      <p>
-        We provide typing jobs and assignment completion services
-        for abroad students with professional support.
-      </p>
+<section class="hero" id="home">
 
-      <a class="btn" href="https://wa.me/918619531001">
-        Contact on WhatsApp
-      </a>
-    </div>
-  </section>
+<div class="hero-content">
 
-  <section class="about" id="about">
-    <h2 class="section-title">About Us</h2>
+<h1>
+Professional <span>Typing & Assignment</span> Solutions
+</h1>
 
-    <p>
-      Singhania Technology Private Limited is a professional company
-      that provides assignment completion and typing work services
-      for international students. We focus on quality work,
-      fast delivery, and professional support.
-    </p>
-  </section>
+<p>
+We provide assignment support and typing services with professional assistance and fast communication.
+</p>
 
-  <section class="services" id="services">
-    <h2 class="section-title">Our Services</h2>
+<div class="hero-buttons">
 
-    <div class="service-boxes">
+<a href="https://wa.me/918619531001" class="btn">
+WhatsApp Now
+</a>
 
-      <div class="box">
-        <h3>Typing Jobs</h3>
-        <p>
-          Professional typing work opportunities with flexible timing.
-        </p>
-      </div>
+<a href="#services" class="btn btn-outline">
+Explore Services
+</a>
 
-      <div class="box">
-        <h3>Assignment Support</h3>
-        <p>
-          We help abroad students complete assignments professionally.
-        </p>
-      </div>
+</div>
 
-      <div class="box">
-        <h3>24/7 Support</h3>
-        <p>
-          Our support team is available anytime for assistance.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <h2 class="section-title" style="color:white;">Contact Us</h2>
-
-    <p><strong>Company:</strong> Singhania Technology Private Limited</p>
-
-    <p><strong>WhatsApp:</strong> +91 8619531001</p>
-
-    <p><strong>Email:</strong> singhaniatechnology@gmail.com</p>
-  </section>
-
-  <footer>
-    © 2026 Singhania Technology Private Limited. All Rights Reserved.
-  </footer>
-<section class="testimonials" id="reviews" style="background:#f8f8f8; padding:60px 40px;">
-
-  <h2 class="section-title" style="text-align:center; color:#c40000; margin-bottom:40px;">
-    Client Feedback
-  </h2>
-
-  <div class="service-boxes" style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-
-    <div class="box" style="background:white; width:300px; padding:25px; border-radius:10px;">
-      <h3 style="color:#c40000;">Priya</h3>
-      <p>“Thank you Singhania Technology Private Limited for your professional support and guidance.”</p>
-    </div>
-
-    <div class="box" style="background:white; width:300px; padding:25px; border-radius:10px;">
-      <h3 style="color:#c40000;">Aishwarya God</h3>
-      <p>“Very supportive team and smooth communication throughout the process.”</p>
-    </div>
-
-    <div class="box" style="background:white; width:300px; padding:25px; border-radius:10px;">
-      <h3 style="color:#c40000;">Tanu Chauhan</h3>
-      <p>“Good experience and helpful support from the company team.”</p>
-    </div>
-
-    <div class="box" style="background:white; width:300px; padding:25px; border-radius:10px;">
-      <h3 style="color:#c40000;">Lakshita Sharma</h3>
-      <p>“Professional service and responsive guidance from Singhania Technology.”</p>
-    </div>
-
-    <div class="box" style="background:white; width:300px; padding:25px; border-radius:10px;">
-      <h3 style="color:#c40000;">Gayatri Meena</h3>
-      <p>“Thank you for the support and smooth working experience.”</p>
-    </div>
-
-  </div>
+</div>
 
 </section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2 class="section-title">About Company</h2>
+
+<div class="about">
+
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72">
+
+<div class="about-text">
+
+<h2>Singhania Technology Private Limited</h2>
+
+<p>
+Singhania Technology Private Limited is a professional company focused on assignment support and typing solutions. 
+We provide responsive communication, smooth workflow support, and quality assistance for clients.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Typing Work</h3>
+<p>
+Professional typing support with smooth workflow assistance and responsive communication.
+</p>
+</div>
+
+<div class="card">
+<h3>Assignment Support</h3>
+<p>
+Professional assignment assistance with quality-focused solutions.
+</p>
+</div>
+
+<div class="card">
+<h3>24/7 Support</h3>
+<p>
+Our support team is available anytime to help and guide clients.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="testimonials" id="reviews">
+
+<h2 class="section-title">Client Feedback</h2>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<h4>Priya</h4>
+<p>
+Thank you Singhania Technology Private Limited for your professional support and guidance.
+</p>
+</div>
+
+<div class="testimonial">
+<h4>Aishwarya God</h4>
+<p>
+Very supportive team and smooth communication throughout the process.
+</p>
+</div>
+
+<div class="testimonial">
+<h4>Tanu Chauhan</h4>
+<p>
+Good experience and helpful support from the company team.
+</p>
+</div>
+
+<div class="testimonial">
+<h4>Lakshita Sharma</h4>
+<p>
+Professional service and responsive guidance from Singhania Technology.
+</p>
+</div>
+
+<div class="testimonial">
+<h4>Gayatri Meena</h4>
+<p>
+Thank you for the support and smooth working experience.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="contact-box">
+
+<h2>Contact Us</h2>
+
+<p>
+Connect with us anytime for professional support and assistance.
+</p>
+
+<a href="https://wa.me/918619531001" class="btn">
+Chat on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Singhania Technology Private Limited. All Rights Reserved.
+</footer>
+
 </body>
 </html>
